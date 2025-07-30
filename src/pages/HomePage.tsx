@@ -1,32 +1,106 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Coffee, Package, Recycle, ShoppingCart, Clock, Shield, DollarSign } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { ArrowRight, Coffee, Package, Recycle, ShoppingCart, Clock, Shield, DollarSign, User, ChevronDown, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border bg-card">
+      <header className="bg-[#1a237e] text-white">
+        {/* Top Banner */}
+        <div className="bg-[#1a237e] text-center py-2 text-sm">
+          <span>Save an extra $500 a year with Rewards+</span>
+          <span className="ml-8">Get always-free shipping</span>
+        </div>
+        
+        {/* Main Header */}
         <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <h1 className="text-2xl font-bold text-primary">Quill.com</h1>
-              <div className="hidden md:flex space-x-6">
-                <Link to="/" className="text-foreground hover:text-primary">Home</Link>
-                <Link to="/products" className="text-foreground hover:text-primary">Products</Link>
-                <Link to="/subscribe-save" className="text-foreground hover:text-primary">Subscribe & Save</Link>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-8">
+              <h1 className="text-2xl font-bold">Quill.com</h1>
+              <div className="hidden lg:block">
+                <input 
+                  type="search" 
+                  placeholder="Search" 
+                  className="px-4 py-2 rounded-md text-black w-96"
+                />
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <Button variant="outline" size="sm">
-                <ShoppingCart className="w-4 h-4" />
-                Cart
-              </Button>
-              <Button size="sm">Sign In</Button>
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-4 text-sm">
+                <div className="text-center">
+                  <div>Buy again</div>
+                  <div className="text-xs opacity-75">0 Points</div>
+                </div>
+                <div className="text-center">
+                  <div>Orders</div>
+                </div>
+                <div className="text-center">
+                  <div>Cart</div>
+                  <div className="text-xs opacity-75">0</div>
+                </div>
+              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="text-white hover:bg-white/10">
+                    <User className="w-4 h-4 mr-2" />
+                    Sign In
+                    <ChevronDown className="w-4 h-4 ml-1" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-64">
+                  <div className="p-4 bg-[#1a237e] text-white">
+                    <div className="font-semibold">Account #: 8418503</div>
+                    <div className="text-sm">Reward ID: 50676901</div>
+                    <div className="text-sm mt-2">Rewards+ customer service team</div>
+                    <div className="text-sm">1-800-437-1281</div>
+                  </div>
+                  <DropdownMenuItem>Your account</DropdownMenuItem>
+                  <DropdownMenuItem>Invoices & account balance</DropdownMenuItem>
+                  <DropdownMenuItem>Reorder list</DropdownMenuItem>
+                  <DropdownMenuItem>Your shopping lists</DropdownMenuItem>
+                  <DropdownMenuItem>Account settings</DropdownMenuItem>
+                  <DropdownMenuItem>Purchasing manager</DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/subscriptions">S&S</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>Rewards program</DropdownMenuItem>
+                  <DropdownMenuItem>Your custom price list</DropdownMenuItem>
+                  <DropdownMenuItem>Your savings</DropdownMenuItem>
+                  <DropdownMenuItem>Your quotes</DropdownMenuItem>
+                  <DropdownMenuItem>Help center</DropdownMenuItem>
+                  <DropdownMenuItem>Send feedback</DropdownMenuItem>
+                  <DropdownMenuItem>Sign out</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
-          </nav>
+          </div>
+        </div>
+        
+        {/* Navigation Menu */}
+        <div className="bg-white border-b">
+          <div className="container mx-auto px-4">
+            <nav className="flex items-center space-x-8 py-3">
+              <Button variant="ghost" className="text-gray-700">
+                <Menu className="w-4 h-4 mr-2" />
+                Shop all
+              </Button>
+              <Link to="/coupons" className="text-blue-600 hover:text-blue-800">Coupons & Rewards</Link>
+              <Link to="/deals" className="text-gray-700 hover:text-gray-900">Hot Deals</Link>
+              <Link to="/buy-again" className="text-gray-700 hover:text-gray-900">Buy Again</Link>
+              <Link to="/solutions" className="text-gray-700 hover:text-gray-900">Solutions</Link>
+              <Link to="/subscribe-save" className="text-gray-700 hover:text-gray-900">Subscribe & Save</Link>
+              <Link to="/ink-toner" className="text-gray-700 hover:text-gray-900">Ink & toner</Link>
+              <Link to="/paper" className="text-gray-700 hover:text-gray-900">Paper</Link>
+              <Link to="/cleaning" className="text-gray-700 hover:text-gray-900">Cleaning</Link>
+              <Link to="/office-supplies" className="text-gray-700 hover:text-gray-900">Office supplies</Link>
+              <Link to="/coffee" className="text-gray-700 hover:text-gray-900">Coffee & breakroom</Link>
+              <Link to="/rewards-benefits" className="text-gray-700 hover:text-gray-900">Rewards+ benefits</Link>
+            </nav>
+          </div>
         </div>
       </header>
 
