@@ -9,32 +9,59 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* B2B Professional Blues */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 214 84% 46%;
+    --primary-light: 214 84% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Trust & Savings Colors */
+    --secondary: 142 71% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 71% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Professional Grays */
+    --muted: 215 20% 97%;
+    --muted-foreground: 215 25% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 215 25% 27%;
+    --accent-light: 38 92% 96%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 25% 27%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 91%;
+    --input: 215 20% 96%;
+    --ring: 214 84% 56%;
+
+    /* B2B Specific Tokens */
+    --subscription-badge: 142 71% 45%;
+    --savings-highlight: 38 92% 50%;
+    --professional-surface: 215 20% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 46%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 96%), hsl(0 0% 100%));
+
+    /* Shadows */
+    --shadow-card: 0 2px 8px hsl(215 25% 27% / 0.08);
+    --shadow-feature: 0 4px 20px hsl(214 84% 56% / 0.15);
+    --shadow-success: 0 4px 20px hsl(142 71% 45% / 0.15);
 
     --radius: 0.5rem;
 

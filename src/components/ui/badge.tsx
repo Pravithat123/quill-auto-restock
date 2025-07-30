@@ -15,6 +15,16 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
+        success:
+          "border-transparent bg-success text-success-foreground hover:bg-success/80",
+        warning:
+          "border-transparent bg-warning text-warning-foreground hover:bg-warning/80",
+        subscription:
+          "border-transparent bg-subscription-badge text-white hover:bg-subscription-badge/80",
+        savings:
+          "border-transparent bg-savings-highlight text-foreground font-bold",
+        "auto-restock":
+          "border-subscription-badge bg-secondary-light text-subscription-badge border",
       },
     },
     defaultVariants: {
