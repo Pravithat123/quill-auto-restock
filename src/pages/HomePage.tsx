@@ -9,9 +9,9 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-[#1a237e] text-white">
+      <header className="bg-[#2B58F1] text-white">
         {/* Top Banner */}
-        <div className="bg-[#1a237e] text-center py-2 text-sm">
+        <div className="bg-[#2B58F1] text-center py-2 text-sm">
           <span>Save an extra $500 a year with Rewards+</span>
           <span className="ml-8">Get always-free shipping</span>
         </div>
@@ -20,7 +20,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <h1 className="text-2xl font-bold">Quill.com</h1>
+              <h1 className="text-4xl font-bold">Quill</h1>
               <div className="hidden lg:block">
                 <input 
                   type="search" 
@@ -52,7 +52,7 @@ const HomePage = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-64">
-                  <div className="p-4 bg-[#1a237e] text-white">
+                  <div className="p-4 bg-[#2B58F1] text-white">
                     <div className="font-semibold">Account #: 8418503</div>
                     <div className="text-sm">Reward ID: 50676901</div>
                     <div className="text-sm mt-2">Rewards+ customer service team</div>

@@ -13,7 +13,7 @@ const SubscribeSavePage = () => {
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
-              <Link to="/" className="text-2xl font-bold text-primary">Quill.com</Link>
+              <Link to="/" className="text-4xl font-bold text-primary">Quill</Link>
               <div className="hidden md:flex space-x-6">
                 <Link to="/" className="text-foreground hover:text-primary">Home</Link>
                 <Link to="/products" className="text-foreground hover:text-primary">Products</Link>

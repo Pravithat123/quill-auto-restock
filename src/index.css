@@ -17,11 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 27%;
 
-    /* B2B Professional Blues */
-    --primary: 214 84% 56%;
+    /* Quill Celebratory Blue */
+    --primary: 224 85% 56%; /* #2B58F1 */
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 214 84% 46%;
-    --primary-light: 214 84% 96%;
+    --primary-hover: 224 85% 46%;
+    --primary-light: 224 85% 96%;
 
     /* Trust & Savings Colors */
     --secondary: 142 71% 45%;
@@ -54,7 +54,7 @@ All colors MUST be HSL.
     --professional-surface: 215 20% 98%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 46%));
+    --gradient-primary: linear-gradient(135deg, hsl(224 85% 56%), hsl(224 85% 46%));
     --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 35%));
     --gradient-hero: linear-gradient(135deg, hsl(214 84% 96%), hsl(0 0% 100%));
 
