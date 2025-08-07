@@ -232,43 +232,119 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Company Swag Banner */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <Card className="bg-gradient-to-r from-blue-100 to-blue-200 border-0">
+            <CardContent className="p-8">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-3xl font-bold text-primary mb-4">Customize your company swag</h2>
+                  <div className="flex items-center gap-4">
+                    <Button size="lg" className="bg-primary hover:bg-primary-hover text-white">
+                      Start your order
+                    </Button>
+                    <span className="text-lg text-muted-foreground">Call us 1-800-982-3400</span>
+                  </div>
+                </div>
+                <div className="hidden md:block">
+                  <div className="flex items-center gap-4">
+                    <Package className="w-16 h-16 text-primary opacity-20" />
+                    <Package className="w-12 h-12 text-primary opacity-40" />
+                    <Package className="w-20 h-20 text-primary opacity-60" />
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Promotional Grid */}
       <section className="py-16 bg-professional-surface">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Subscribe & Save?</h2>
-            <p className="text-xl text-muted-foreground">Built for business, designed for convenience</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: DollarSign,
-                title: "Save Money",
-                description: "Enjoy discounts of 5-15% on recurring orders, plus free shipping on qualifying orders."
-              },
-              {
-                icon: Clock,
-                title: "Save Time",
-                description: "Set your delivery schedule and forget about it. We'll handle the rest automatically."
-              },
-              {
-                icon: Shield,
-                title: "Complete Control",
-                description: "Pause, cancel, or modify your subscriptions anytime with our self-service dashboard."
-              }
-            ].map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="mx-auto bg-primary rounded-full p-4 w-16 h-16 flex items-center justify-center">
-                    <feature.icon className="w-8 h-8 text-primary-foreground" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Workplace Cleaning */}
+            <Card className="bg-gradient-to-br from-amber-50 to-amber-100 lg:col-span-1 lg:row-span-2">
+              <CardContent className="p-6 h-full flex flex-col">
+                <h3 className="text-2xl font-bold text-primary mb-2">Workplace cleaning essentials</h3>
+                <p className="text-muted-foreground mb-4">Stock up on everything</p>
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="w-16 h-20 bg-yellow-300 rounded"></div>
+                    <div className="w-16 h-20 bg-blue-400 rounded"></div>
                   </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Clorox Products */}
+            <Card className="bg-gradient-to-br from-green-50 to-green-100">
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <Badge variant="savings" className="mb-2">UP TO</Badge>
+                  <h3 className="text-xl font-bold">20% off</h3>
+                  <p className="text-sm">Clorox® products</p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-16 h-16 bg-orange-400 rounded-lg"></div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Keep Office Fresh */}
+            <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4">
+                  <div className="flex justify-center mb-2">
+                    <span className="text-2xl">✨</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-600 italic">Keep the office fresh & clean</h3>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Lysol Deal */}
+            <Card className="bg-gradient-to-br from-blue-50 to-blue-100">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-1">BUY 2 GET 1</h3>
+                <h3 className="text-xl font-bold mb-2">50% off</h3>
+                <p className="text-sm mb-3">Lysol cleaners and disinfectants</p>
+                <div className="text-right">
+                  <span className="text-blue-600 italic text-sm">Buy more, save more</span>
+                </div>
+                <p className="text-xs text-muted-foreground mt-2">Exact item only.</p>
+              </CardContent>
+            </Card>
+
+            {/* Bounty Paper Towels */}
+            <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100">
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <Badge variant="savings" className="mb-2">UP TO</Badge>
+                  <h3 className="text-xl font-bold">15% off</h3>
+                  <p className="text-sm">Bounty® paper towels</p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-16 h-16 bg-yellow-300 rounded-lg"></div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Perk Disinfecting Wipes */}
+            <Card className="bg-gradient-to-br from-teal-50 to-teal-100">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">15% off Perk™</h3>
+                <p className="text-sm mb-4">Disinfecting Wipes</p>
+                <div className="flex justify-center">
+                  <div className="grid grid-cols-3 gap-1">
+                    <div className="w-6 h-8 bg-teal-400 rounded-sm"></div>
+                    <div className="w-6 h-8 bg-teal-400 rounded-sm"></div>
+                    <div className="w-6 h-8 bg-teal-400 rounded-sm"></div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
