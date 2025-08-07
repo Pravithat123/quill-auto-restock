@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import SubscribeSavePage from "./pages/SubscribeSavePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import SubscriptionDashboard from "./pages/SubscriptionDashboard";
+import InkTonerPage from "./pages/InkTonerPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,8 +22,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/subscribe-save" element={<SubscribeSavePage />} />
-          <Route path="/product/:sku" element={<ProductDetailPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/subscriptions" element={<SubscriptionDashboard />} />
+          <Route path="/ink-toner" element={<InkTonerPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

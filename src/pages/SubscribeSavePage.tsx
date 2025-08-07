@@ -224,75 +224,98 @@ const SubscribeSavePage = () => {
                 title: "Ink & Toner", 
                 description: "Never run out of printer supplies",
                 savings: "Save up to 15%",
-                popular: true
+                popular: true,
+                image: "/src/assets/ink-toner.jpg",
+                link: "/ink-toner"
               },
               { 
                 icon: Coffee, 
                 title: "Coffee & Breakroom", 
                 description: "Keep your team energized",
                 savings: "Save up to 12%",
-                popular: true
+                popular: true,
+                image: "/src/assets/coffee-breakroom.jpg",
+                link: "/coffee"
               },
               { 
                 icon: Package, 
                 title: "Cleaning Supplies", 
                 description: "Maintain a clean workspace",
                 savings: "Save up to 10%",
-                popular: false
+                popular: false,
+                image: "/src/assets/cleaning-supplies.jpg",
+                link: "/cleaning"
               },
               { 
                 icon: Package, 
                 title: "Paper & Office", 
                 description: "Essential office supplies",
                 savings: "Save up to 8%",
-                popular: false
+                popular: false,
+                image: "/src/assets/paper-office.jpg",
+                link: "/paper"
               },
               { 
                 icon: Package, 
                 title: "Safety & Health", 
                 description: "Workplace protection gear",
                 savings: "Save up to 12%",
-                popular: false
+                popular: false,
+                image: "/src/assets/cleaning-supplies.jpg",
+                link: "/safety"
               },
               { 
                 icon: Package, 
                 title: "Facilities", 
                 description: "Building maintenance supplies",
                 savings: "Save up to 10%",
-                popular: false
+                popular: false,
+                image: "/src/assets/cleaning-supplies.jpg",
+                link: "/facilities"
               },
               { 
                 icon: Package, 
                 title: "Food Service", 
                 description: "Kitchen and dining supplies",
                 savings: "Save up to 8%",
-                popular: false
+                popular: false,
+                image: "/src/assets/coffee-breakroom.jpg",
+                link: "/food-service"
               },
               { 
                 icon: Package, 
                 title: "Industrial", 
                 description: "Heavy-duty work supplies",
                 savings: "Save up to 15%",
-                popular: false
+                popular: false,
+                image: "/src/assets/ink-toner.jpg",
+                link: "/industrial"
               }
             ].map((category, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-200 cursor-pointer relative">
-                {category.popular && (
-                  <Badge variant="subscription" className="absolute -top-2 -right-2 z-10">
-                    Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center">
-                  <div className="mx-auto bg-primary-light rounded-full p-4 w-16 h-16 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <category.icon className="w-8 h-8" />
-                  </div>
-                  <CardTitle className="text-lg">{category.title}</CardTitle>
-                  <CardDescription className="text-sm">{category.description}</CardDescription>
-                  <Badge variant="savings" className="mx-auto text-xs">
-                    {category.savings}
-                  </Badge>
-                </CardHeader>
-              </Card>
+              <Link key={index} to={category.link}>
+                <Card className="group hover:shadow-lg transition-all duration-200 cursor-pointer relative h-full">
+                  {category.popular && (
+                    <Badge variant="subscription" className="absolute -top-2 -right-2 z-10">
+                      Popular
+                    </Badge>
+                  )}
+                  <CardHeader className="text-center">
+                    {/* Category Image */}
+                    <div className="mx-auto rounded-lg overflow-hidden w-full h-24 mb-4">
+                      <img 
+                        src={category.image} 
+                        alt={category.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                      />
+                    </div>
+                    <CardTitle className="text-lg">{category.title}</CardTitle>
+                    <CardDescription className="text-sm">{category.description}</CardDescription>
+                    <Badge variant="savings" className="mx-auto text-xs">
+                      {category.savings}
+                    </Badge>
+                  </CardHeader>
+                </Card>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -300,6 +323,97 @@ const SubscribeSavePage = () => {
               View All Eligible Products
               <ArrowRight className="w-5 h-5" />
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Subscription Management Dashboard */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Manage Your Subscriptions</h2>
+            <p className="text-xl text-muted-foreground">Track deliveries, modify schedules, and manage your auto-restock orders</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Card className="mb-6">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-blue-100 rounded-lg p-3">
+                    <Package className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Your delivery settings have changed</h3>
+                    <p className="text-sm text-muted-foreground">Monthly and weekly subscriptions will arrive by your weekly delivery day, Sunday. Manage your delivery preferences in Settings.</p>
+                  </div>
+                </div>
+                <Button variant="outline" size="sm">Learn more</Button>
+              </CardContent>
+            </Card>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Upcoming Delivery */}
+              <Card>
+                <CardHeader>
+                  <div className="flex justify-between items-center">
+                    <CardTitle className="text-xl">Aug 4</CardTitle>
+                    <Button variant="outline" size="sm">Skip</Button>
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    <p>Last day to edit was: Tuesday, July 29</p>
+                    <p>You may still skip items if your delivery wasn't shipped.</p>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex gap-4">
+                      <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                        <Package className="w-8 h-8 text-muted-foreground" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-medium">Wonderful Pistachios N...</h4>
+                        <p className="text-sm text-muted-foreground">Flavor Name Roasted &...</p>
+                        <p className="text-lg font-bold text-red-600">$14.51 <span className="text-sm font-normal">($2.15 / Ounce)</span></p>
+                        <p className="text-sm text-green-600">Saving 5%</p>
+                        <p className="text-sm text-muted-foreground">Qty: 1</p>
+                        <p className="text-sm text-muted-foreground">Shipping soon</p>
+                        <Button variant="link" size="sm" className="p-0 h-auto text-primary">Track delivery</Button>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Next Delivery */}
+              <Card>
+                <CardHeader>
+                  <div className="flex justify-between items-center">
+                    <CardTitle className="text-xl">Aug 31</CardTitle>
+                    <Button variant="link" size="sm" className="text-primary">Change Delivery Date</Button>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <Package className="w-8 h-8 text-muted-foreground" />
+                      </div>
+                      <p className="text-muted-foreground">300 TRI STATE INTL STE 300</p>
+                      <p className="text-muted-foreground">Last day to edit delivery: [Date]</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button size="lg" variant="cta" asChild>
+                <Link to="/subscriptions">
+                  View Full Subscription Dashboard
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
